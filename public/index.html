@@ -3,25 +3,114 @@
 	<head>
 		<meta charset="UTF-8">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.9.1/dash.all.min.js"></script>
+		<!-- https://www.fooish.com/jquery/ jquery教學 -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		
+	
 		<title>DASH JS title </title>
-		<style>
-            video {
+		<style type="text/css">
+            /* video {
                 width: 80%;
                 height: 80%;
+  				z-index:-1;
+            } */
+            
+            img {
+            	width: 40px;
+                height: 40px;
+            }
+            
+            #video{
+            	position:absolute;
+            	 width: 80%;
+                height: 80%;
+            	top:0px;
+    			left:0px;
+                z-index:-1;
+            }
+            div.video{display:flex; justify-content:center; align-items:center;vertical-align: bottom;}
+            .buttonbar{
+            	position:absolute;    
+            	vertical-align: bottom;     	
+            	background:#333333;
+    			width: 50px;
+    			height: 50px;
+    			left:5%;
+    			top:65%;
+            	z-index:1;
+            }
+            botton{
+	            border: 0;
+			    color: #fff;
+			    background: #f5246d;
+			    font: .8em FontAwesome;
+			    cursor: pointer;
+			    width: 26px;
+			    text-align: center;
+			    line-height: 22px;
+			    border-radius: 100%;
+            }
+           /*  .video-skin{
+            	position:relative;
+            	vertical-align: bottom;
+            	background:#0100FF;
+            	bottom:5px;
+    			left:5px;
+    			width: 150px;
+    			height: 50px;
+            	z-index:2;
+            } */
+            .player__button_toggle focus{
+            	background:#88f100FF;
             }
         </style>
 	</head>
-	<body>
-		開始播放影片
-        <div>
-           <video id="videoPlayer" controls autoplay></video>
+	<body style="cursor: none;">
+		<div id="video" class="video">		
+			<div>
+				<video id="videoPlayer" autoplay="true" >
+				</video>
+			</div>
+			
+		</div>	
         </div>
+		<div class="buttonbar">
+					<div>
+						<button id="textBox" type="button"  onclick="play()"  tabindex=2 autofocus><img id="img_play" src="img/player/icon_play.svg"></button>
+					</div>
+	    </div>
+       
+        <div class="video-skin">
+			<div class="progress">
+		  		<span id="progress-amount"></span>
+			</div>
+			<div class="time-info">
+				<span id="current-time" style="color:white">00:00</span> <span style="color:white">/<span> <span id="total-time" style="color:white">00:00</span>
+			</div>	
+		</div> 
         <script>
+	        var player ;
             (function(){
-                var url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";//http://act1.video.friday.tw/horigin/apptest/manifest.mpd
-                var player = dashjs.MediaPlayer().create();
+                var url = "http://act1.video.friday.tw/horigin/apptest/manifest.mpd";//"https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";//http://act1.video.friday.tw/horigin/apptest/manifest.mpd
+                player = dashjs.MediaPlayer().create();
                 player.initialize(document.querySelector("#videoPlayer"), url, true);
             })();
+            
+            function play(){
+            	console.log("play btn onclick");
+            	if(player.isReady()){
+	            	if(player.isPaused()){
+	            		console.log("video play");
+	            		player.play();
+	            		document.getElementById("img_play").src="img/player/icon_pause.svg";
+	            	}
+	            	else{
+	            		console.log("video pause");
+	            		player.pause();
+	            		document.getElementById("img_play").src="img/player/icon_play.svg";
+	            	}
+	            }
+            }
         </script>
     </body>
 </html>
