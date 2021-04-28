@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.9.1/dash.all.min.js"></script>
+		<title>DASH JS title </title>
+		<style>
+            video {
+                width: 80%;
+                height: 80%;
+            }
+        </style>
+	</head>
+	<body>
+		開始播放影片
+        <div>
+           <video id="videoPlayer" controls autoplay></video>
+        </div>
+        <script>
+            (function(){
+                var url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";//http://act1.video.friday.tw/horigin/apptest/manifest.mpd
+                var player = dashjs.MediaPlayer().create();
+                player.initialize(document.querySelector("#videoPlayer"), url, true);
+            })();
+        </script>
+    </body>
+</html>
