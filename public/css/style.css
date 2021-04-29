@@ -1,0 +1,44 @@
+@charset "UTF-8";
+#video{
+            	position:absolute;
+            	 width: 80%;
+                height: 80%;
+            	top:0px;
+    			left:0px;
+                z-index:-1;
+            }
+            div.video{display:flex; justify-content:center; align-items:center;vertical-align: bottom;}/*影片video 置中*/
+            .buttonbar{
+            	position:absolute;    
+            	vertical-align: bottom;  
+            	display: inline-block;
+            	justify-content:center; 
+            	align-items:center;
+    			width: 60px;
+    			height: 60px;
+    			left:5%;
+    			top:65%;
+            	z-index:1;
+            }
+            /* 圓形按鈕 http://www.w3bai.com/zh-TW/css/css3_buttons.html */
+            button{
+            	width: 60px;
+    			height: 60px;
+    			display: inline-block;
+    			justify-content:center; 
+    			align-items:center;
+    			position:rergb(62, 97, 198);
+    			background:#336CFC;
+    			border-radius: 100%; /*使用border-radius屬性來圓角添加到一個按鈕*/
+            }
+         
+           /*  .video-skin{
+            	
+            	vertical-align: bottom;
+            	background:#0100FF;
+            	bottom:5px;
+    			left:5px;
+    			width: 150px;
+    			height: 50px;
+            	z-index:2;
+            } */

@@ -6,54 +6,9 @@
 		<!-- https://www.fooish.com/jquery/ jquery教學 -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		
-	
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<title>DASH JS title </title>
-		<style type="text/css">
-           
-            #video{
-            	position:absolute;
-            	 width: 80%;
-                height: 80%;
-            	top:0px;
-    			left:0px;
-                z-index:-1;
-            }
-            div.video{display:flex; justify-content:center; align-items:center;vertical-align: bottom;}/*影片video 置中*/
-            .buttonbar{
-            	position:absolute;    
-            	vertical-align: bottom;  
-            	display: inline-block;
-            	justify-content:center; 
-            	align-items:center;
-    			width: 60px;
-    			height: 60px;
-    			left:5%;
-    			top:65%;
-            	z-index:1;
-            }
-            button{
-            	width: 60px;
-    			height: 60px;
-    			display: inline-block;
-    			justify-content:center; 
-    			align-items:center;
-    			position:rergb(62, 97, 198);
-    			background:#336CFC;
-    			border-radius: 100%;
-            }
-         
-           /*  .video-skin{
-            	
-            	vertical-align: bottom;
-            	background:#0100FF;
-            	bottom:5px;
-    			left:5px;
-    			width: 150px;
-    			height: 50px;
-            	z-index:2;
-            } */
-            
-        </style>
+		
 	</head>
 	<body style="cursor: none;">
 		<div id="video" class="video">		
@@ -64,7 +19,7 @@
 			
 		</div>	
         </div>
-		<div class="buttonbar">
+		<div class="buttonbar" id="buttonbar">
 					<div>
 						<button id="textBox" type="button"  onclick="play()"  tabindex=2 autofocus><img id="img_play" style="width: 40px;height: 40px;" src="img/player/icon_play.svg"></button>
 					</div>
@@ -78,29 +33,6 @@
 				<span id="current-time" style="color:white">00:00</span> <span style="color:white">/<span> <span id="total-time" style="color:white">00:00</span>
 			</div>	
 		</div> 
-        <script>
-	        var player ;
-            (function(){
-                var url = "http://act1.video.friday.tw/horigin/apptest/manifest.mpd";//"https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";//http://act1.video.friday.tw/horigin/apptest/manifest.mpd
-                player = dashjs.MediaPlayer().create();
-                player.initialize(document.querySelector("#videoPlayer"), url, true);
-            })();
-            
-            function play(){
-            	console.log("play btn onclick");
-            	if(player.isReady()){
-	            	if(player.isPaused()){
-	            		console.log("video play");
-	            		player.play();
-	            		document.getElementById("img_play").src="img/player/icon_pause.svg";
-	            	}
-	            	else{
-	            		console.log("video pause");
-	            		player.pause();
-	            		document.getElementById("img_play").src="img/player/icon_play.svg";
-	            	}
-	            }
-            }
-        </script>
+       <script src="js/player.js"></script>
     </body>
 </html>
