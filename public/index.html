@@ -16,13 +16,41 @@
 				<video id="videoPlayer" >
 				</video>
 			</div>
-			
 		</div>	
         </div>
 		<div class="buttonbar" id="buttonbar">
-					<div>
-						<button id="textBox" type="button"  onclick="play()"  tabindex=2 autofocus><img id="img_play" style="width: 40px;height: 40px;" src="img/player/icon_play.svg"></button>
-					</div>
+		<!-- tabIndex 的最大值不应超过 32767。如果没有指定，它的默认值为 0。 -->
+			<div class="playaction" id="playaction">
+				<button id="backwardBtn" type="button"  onclick=""  tabindex=1 >
+					<img id="img_backward" style="width: 40px;height: 40px;" src="img/player/icon_backward.svg">
+				</button>
+				<button id="playBtn" type="button"  onclick="play()"  tabindex=2 autofocus >
+					<img id="img_play" style="width: 40px;height: 40px;" src="img/player/icon_play.svg">
+				</button>	
+				<button id="forwardBtn" type="button"  onclick=""  tabindex=3 >
+					<img id="img_forward" style="width: 40px;height: 40px;" src="img/player/icon_forward.svg">
+				</button>
+			</div>
+			<div class="linebar" id="linebar" >
+				<hr color=blue tabindex=-1>
+			</div>
+			<div class="playaction2" id="playaction">
+				<button id="action1" type="button"  onclick=""  tabindex=11  >
+					節目
+				</button>
+				<button id="action2" type="button"  onclick=""  tabindex=12 >
+					章節
+				</button>	
+				<button id="action3" type="button"  onclick=""  tabindex=13 >
+					字幕
+				</button>
+				<button id="action4" type="button"  onclick=""  tabindex=14 >
+					字型
+				</button>
+				<button id="action4" type="button"  onclick=""  tabindex=15 >
+					語音
+				</button>
+			</div>
 	    </div>
        
         <div class="video-skin">
