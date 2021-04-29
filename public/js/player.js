@@ -96,8 +96,8 @@ var browser = navigator.appName;
 })();
 
 function HideBtnfunction(){
-//	if(document.getElementById("buttonbar").style.display !== "none")
-//	document.getElementById("buttonbar").style.display ="none";
+	if(document.getElementById("buttonbar").style.display !== "none")
+		document.getElementById("buttonbar").style.display ="none";
 }
 
 function showBtnfunction(){
