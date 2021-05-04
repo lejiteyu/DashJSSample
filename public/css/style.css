@@ -1,4 +1,14 @@
 @charset "UTF-8";
+
+/*  
+	class可以在頁面裡面重複使用，
+	id由於在頁面裡面只能出現一次，所以不能重複使用，
+	
+	
+	定義class的css是用點：「.」，如.footer
+	
+	定義id的css是用井號「#」，如#footer
+*/
 			#video{
             	position:absolute;
             	 width: 80%;
@@ -13,7 +23,7 @@
             	/* vertical-align: bottom;  垂直方向的對齊方式*/
             	/*align:"center";水平置中 */
             	/*valign:"center";水平置中 */
-    			width:350px;
+            	width:800px;
     			height: 60px;
     			left:10%;/*位置靠左*/
     			top:40%;/*位置高度*/
@@ -30,6 +40,14 @@
     			color:#ffffff;
     			border-radius: 100%; /*使用border-radius屬性來圓角添加到一個按鈕*/
             }
+            .range{
+	            width:90%;
+	            marage:30px 30px 30px 30px;/*上 右 下 左*/
+	            background-image: -webkit-linear-gradient(left, rgb(39, 69, 175) 0%, rgb(39, 69, 175) 18.7724%, rgba(255, 255, 255, 0.4) 18.7724%, rgba(255, 255, 255, 0.4) 100%);
+            }
+             .range:focus{
+              background:#336CFC;
+             }
             
             button:focus{
 			  background:#33FFFC;

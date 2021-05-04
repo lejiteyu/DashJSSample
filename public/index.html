@@ -19,6 +19,10 @@
 		</div>	
         </div>
 		<div class="buttonbar" id="buttonbar">
+			<div class="contentTitlebar">
+				<div class="contentTitle" tabindex=-1 >TVBS新聞台</div>
+				<div class="contentSubTitle" tabindex=-1 >17整點新聞</div>
+			</div>
 		<!-- tabIndex 的最大值不应超过 32767。如果没有指定，它的默认值为 0。 -->
 			<div class="playaction" id="playaction">
 				<button id="backwardBtn" type="button"  onclick=""  tabindex=1 >
@@ -34,20 +38,29 @@
 			<div class="linebar" id="linebar" >
 				<hr color=blue tabindex=-1>
 			</div>
-			<div class="playaction2" id="playaction">
-				<button id="action1" type="button"  onclick=""  tabindex=11  >
+			<div class="progress-bar">
+			<!--type="range" ref: https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/range -->
+				<input class="range" id="range" type="range" name="progress" class="player__progress" min="0" max="100" step="1" value="0"  tabindex=11 >
+
+				<div class="clipvideo">
+					<div class="clipvideo-pic"></div>
+					<div class="clipvideo-time"><span class="clip-hour" id="clipTime"></span></div>
+				</div>
+			</div>
+			<div class="playaction2" id="playaction2">
+				<button id="action1" type="button"  onclick=""  tabindex=21  >
 					節目
 				</button>
-				<button id="action2" type="button"  onclick=""  tabindex=12 >
+				<button id="action2" type="button"  onclick=""  tabindex=22 >
 					章節
 				</button>	
-				<button id="action3" type="button"  onclick=""  tabindex=13 >
+				<button id="action3" type="button"  onclick=""  tabindex=23 >
 					字幕
 				</button>
-				<button id="action4" type="button"  onclick=""  tabindex=14 >
+				<button id="action4" type="button"  onclick=""  tabindex=24 >
 					字型
 				</button>
-				<button id="action4" type="button"  onclick=""  tabindex=15 >
+				<button id="action4" type="button"  onclick=""  tabindex=25 >
 					語音
 				</button>
 			</div>
